@@ -26,11 +26,11 @@ public class Dependente extends Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_DEPENDENTE")
+    @Column(name = "id_dependente")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "ID_CANDIDATO")
+    @JoinColumn(name = "id_candidato", nullable = false)
     private Candidato candidato;
 
 }

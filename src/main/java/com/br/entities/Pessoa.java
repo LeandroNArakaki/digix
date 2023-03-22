@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
 @Setter
 @MappedSuperclass
 public class Pessoa {
-    @Column(name = "NOME")
+    @Column(name = "nome")
     private String nome;
-    @Column(name = "IDADE")
+    @Column(name = "idade")
     private Integer idade;
-    @Column(name = "GRAU_PARENTESCO")
+    @Column(name = "grauParentesco")
     @Enumerated(EnumType.STRING)
     private GrauParentesco grauParentesco;
-    @Column(name = "DATA_NASCIMENTO")
+    @Column(name = "dataNascimento")
     private LocalDateTime dataNascimento;
 
 }

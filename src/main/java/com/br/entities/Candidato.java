@@ -28,19 +28,19 @@ public class Candidato extends Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_CANDIDATO")
+    @Column(name = "id_candidato")
     private Long id;
-    @Column(name = "NOME_MAE" )
+    @Column(name = "nomeMae" )
     private String nomeMae;
-    @Column(name = "CPF")
+    @Column(name = "cpf")
     private String cpf;
-    @Column(name = "RENDA_FAMILIAR", precision = 12, scale = 2)
+    @Column(name = "rendaFamiliar", precision = 12, scale = 2)
     private BigDecimal rendaFamiliar;
-    @Column(name = "ESTADO_CIVIL")
+    @Column(name = "estadoCivil")
     @Enumerated(EnumType.STRING)
     private EstadoCivil estadoCivil;
 
-    @OneToMany(mappedBy = "CANDIDATO")
+    @OneToMany(mappedBy = "candidato")
     private List<Dependente> dependentes;
 
 
