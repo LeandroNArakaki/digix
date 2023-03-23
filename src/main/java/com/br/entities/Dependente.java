@@ -1,6 +1,7 @@
 package com.br.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,6 +23,7 @@ import javax.persistence.Table;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Dependente extends Pessoa {
 
     @Id
@@ -32,5 +34,13 @@ public class Dependente extends Pessoa {
     @ManyToOne
     @JoinColumn(name = "id_candidato", nullable = false)
     private Candidato candidato;
+
+
+    public Dependente construirDependente(Dependente dependente) {
+        return Dependente.builder()
+                .id(dependente.getId())
+                .candidato(dependente.getCandidato())
+                .build();
+    }
 
 }

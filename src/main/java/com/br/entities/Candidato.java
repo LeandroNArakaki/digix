@@ -2,6 +2,7 @@ package com.br.entities;
 
 import com.br.enums.EstadoCivil;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +25,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Candidato extends Pessoa {
 
     @Id
@@ -44,6 +46,14 @@ public class Candidato extends Pessoa {
     private List<Dependente> dependentes;
 
 
-
-
+    public Candidato construirCandidato(Candidato candidato) {
+        return Candidato.builder()
+                .id(candidato.getId())
+                .nomeMae(candidato.getNomeMae())
+                .cpf(candidato.getCpf())
+                .rendaFamiliar(candidato.getRendaFamiliar())
+                .estadoCivil(candidato.estadoCivil)
+                .dependentes(candidato.getDependentes())
+                .build();
+    }
 }
