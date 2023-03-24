@@ -1,6 +1,6 @@
-package com.br.entities;
+package br.com.entities;
 
-import com.br.enums.EstadoCivil;
+import br.com.enums.EstadoCivil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

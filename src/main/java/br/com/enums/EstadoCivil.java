@@ -1,4 +1,4 @@
-package com.br.enums;
+package br.com.enums;
 
 import lombok.Getter;
 

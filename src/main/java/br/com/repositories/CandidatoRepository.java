@@ -1,6 +1,6 @@
-package com.br.repositories;
+package br.com.repositories;
 
-import com.br.entities.Candidato;
+import br.com.entities.Candidato;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

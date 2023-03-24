@@ -1,9 +1,8 @@
-package com.br.controllers;
+package br.com.controllers;
 
-import com.br.entities.Candidato;
-import com.br.entities.Dependente;
-import com.br.service.CandidatoService;
-import com.br.service.DependenteService;
+import br.com.entities.Dependente;
+import br.com.service.CandidatoService;
+import br.com.service.DependenteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

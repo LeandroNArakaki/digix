@@ -1,7 +1,9 @@
-package com.br.service;
+package br.com.service;
 
-import com.br.entities.Candidato;
+import br.com.entities.Candidato;
+import br.com.entities.Dependente;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,4 +15,8 @@ public interface CandidatoService {
     Optional<Candidato> salvarCandidato(Candidato candidato);
 
     void deletarCandidato(Long id);
+
+    Integer checarPontosPorRendaFamiliar(BigDecimal rendaFamiliar);
+
+    Integer checarPontosPorDependente(List<Dependente> dependetes);
 }

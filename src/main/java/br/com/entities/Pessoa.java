@@ -1,7 +1,9 @@
-package com.br.entities;
+package br.com.entities;
 
-import com.br.enums.GrauParentesco;
+import br.com.enums.GrauParentesco;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public class Pessoa {
     @Column(name = "nome")

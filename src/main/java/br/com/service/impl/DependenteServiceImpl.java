@@ -1,8 +1,8 @@
-package com.br.service.impl;
+package br.com.service.impl;
 
-import com.br.entities.Dependente;
-import com.br.repositories.DependenteRepository;
-import com.br.service.DependenteService;
+import br.com.entities.Dependente;
+import br.com.repositories.DependenteRepository;
+import br.com.service.DependenteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

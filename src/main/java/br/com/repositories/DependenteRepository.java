@@ -1,7 +1,7 @@
-package com.br.repositories;
+package br.com.repositories;
 
 
-import com.br.entities.Dependente;
+import br.com.entities.Dependente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

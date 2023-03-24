@@ -1,4 +1,4 @@
-package com.br.entities;
+package br.com.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

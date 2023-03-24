@@ -1,6 +1,6 @@
-package com.br.service;
+package br.com.service;
 
-import com.br.entities.Dependente;
+import br.com.entities.Dependente;
 
 import java.util.List;
 import java.util.Optional;
