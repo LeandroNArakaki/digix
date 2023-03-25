@@ -1,9 +1,8 @@
 package br.com.service.impl;
 
-import br.com.entities.Dependente;
-import br.com.repositories.DependenteRepository;
+import br.com.entity.Dependente;
+import br.com.repository.DependenteRepository;
 import br.com.service.DependenteService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +10,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class DependenteServiceImpl implements DependenteService {
 
     @Autowired
@@ -19,7 +17,8 @@ public class DependenteServiceImpl implements DependenteService {
 
     @Override
     public List<Dependente> listarDependentesPorCandidato(Long idCandidato) {
-        return dependenteRepository.listarDependentesPorCandidato(idCandidato);
+        //return dependenteRepository.listarDependentesPorCandidato(idCandidato);
+        return null;
     }
 
     @Override

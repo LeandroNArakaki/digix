@@ -1,11 +1,11 @@
-package br.com.entities;
+package br.com.entity;
 
 import br.com.enums.EstadoCivil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,8 +21,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "CANDIDATOS")
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -45,6 +45,9 @@ public class Candidato extends Pessoa {
     @OneToMany(mappedBy = "candidato")
     private List<Dependente> dependentes;
 
+    @Column(name = "pontuacao")
+    private Integer pontuacao;
+
 
     public Candidato construirCandidato(Candidato candidato) {
         return Candidato.builder()
@@ -54,6 +57,13 @@ public class Candidato extends Pessoa {
                 .rendaFamiliar(candidato.getRendaFamiliar())
                 .estadoCivil(candidato.estadoCivil)
                 .dependentes(candidato.getDependentes())
+                .pontuacao(candidato.getPontuacao())
                 .build();
     }
+
+    public void setarPontuacao (Integer pontuacao){
+        this.setPontuacao(pontuacao);
+    }
+
+
 }

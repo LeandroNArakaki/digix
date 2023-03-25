@@ -1,7 +1,7 @@
 package br.com.service;
 
-import br.com.entities.Candidato;
-import br.com.entities.Dependente;
+import br.com.entity.Candidato;
+import br.com.entity.Dependente;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -19,4 +19,6 @@ public interface CandidatoService {
     Integer checarPontosPorRendaFamiliar(BigDecimal rendaFamiliar);
 
     Integer checarPontosPorDependente(List<Dependente> dependetes);
+
+    List<Candidato> exibirCandidatosSorteadosPorPontuacao();
 }

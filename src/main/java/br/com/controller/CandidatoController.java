@@ -1,8 +1,7 @@
-package br.com.controllers;
+package br.com.controller;
 
-import br.com.entities.Candidato;
+import br.com.entity.Candidato;
 import br.com.service.CandidatoService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,24 +18,23 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/candidato")
-@RequiredArgsConstructor
+@RequestMapping("/api")
 public class CandidatoController {
 
     @Autowired
     private CandidatoService candidatoService;
 
-    @GetMapping("/listaCandidatos")
+    @GetMapping("/candidato/listarCandidatos")
     public List<Candidato> listarCandidatos() {
         return candidatoService.listarCandidatos();
     }
 
-    @PostMapping("/salvarCandidato")
+    @PostMapping("/candidato/salvarCandidato")
     public ResponseEntity<?> salvarCandidato(@RequestBody Candidato candidato) {
         return new ResponseEntity<>(candidatoService.salvarCandidato(candidato), HttpStatus.OK);
     }
 
-    @PutMapping("/alterarCandidato/{id}")
+    @PutMapping("/candidato/alterarCandidato/{id}")
     public ResponseEntity<?> alterarCandidato(@PathVariable Long id, @RequestBody Candidato candidatoAlterado) {
         Optional<Candidato> candidato = candidatoService.buscarPorId(id);
         if (candidato.isPresent()) {
@@ -47,10 +45,15 @@ public class CandidatoController {
     }
 
 
-    @DeleteMapping("/deletarCandidato/{id}")
+    @DeleteMapping("/candidato/deletarCandidato/{id}")
     public ResponseEntity<?> deletarCandidato(@PathVariable Long id) {
         candidatoService.deletarCandidato(id);
         return new ResponseEntity<>("Candidato deletado com sucessso!", HttpStatus.OK);
+    }
+
+    @GetMapping("/candidato/exibirCandidatosSorteados")
+    public List<Candidato> exibirCandidatosSorteadosPorPontuacao(){
+        return candidatoService.exibirCandidatosSorteadosPorPontuacao();
     }
 
 

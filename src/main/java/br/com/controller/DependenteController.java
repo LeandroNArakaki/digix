@@ -1,9 +1,8 @@
-package br.com.controllers;
+package br.com.controller;
 
-import br.com.entities.Dependente;
+import br.com.entity.Dependente;
 import br.com.service.CandidatoService;
 import br.com.service.DependenteService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +20,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/dependente")
-@RequiredArgsConstructor
-public class DependenteController  {
-
+public class DependenteController {
     @Autowired
     private DependenteService dependenteService;
-
     @Autowired
     private CandidatoService candidatoService;
 
